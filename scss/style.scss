@@ -1,2 +1,70 @@
 @import "_nullStyle.scss";
 
+.wrapper {
+   overflow: hidden;
+   min-height: 100%;
+   background-color: aquamarine;
+   display: flex;
+   flex-direction: column;
+}
+.header {
+   justify-content: space-between;
+   flex: 0 1 auto;
+   background-color: teal;
+}
+.content {
+}
+.title-conteiner {
+}
+.conteiner {
+   max-width: 1180px;
+   margin: 0 auto;
+}
+.title-conteiner__row {
+   display: flex;
+}
+.title-conteiner__image {
+   overflow: hidden;
+   img {
+      max-height: 250px;
+      max-width: 250px;
+   }
+}
+.title-conteiner__contact {
+}
+.title-conteiner__list {
+}
+.nav {
+   background-color: tomato;
+   flex: 0 0 auto;
+}
+.nav__row {
+   display: flex;
+   justify-content: center;
+}
+.nav__about {
+}
+.nav__direction {
+}
+.nav__project {
+}
+.nav__news {
+}
+.nav__contact {
+}
+.main {
+   flex: 1 1 auto;
+}
+.conteiner {
+}
+.footer {
+   background-color: teal;
+}
+.footer__row {
+   display: flex;
+   height: 100px;
+   justify-content: center;
+   align-items: center;
+}
+.footer__text {
+}
