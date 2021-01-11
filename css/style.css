@@ -104,56 +104,208 @@ body {
           flex-direction: column;
 }
 
+.conteiner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+}
+
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-  background-color: teal;
+  background-color: #a352de;
+  z-index: 50;
 }
 
-.conteiner {
-  max-width: 1180px;
-  margin: 0 auto;
+.header:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #a352de;
 }
 
 .title-conteiner__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100px;
 }
 
 .title-conteiner__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 300px;
+          flex: 0 0 300px;
   overflow: hidden;
+  z-index: 3;
+  position: relative;
 }
 
 .title-conteiner__image img {
-  max-height: 250px;
-  max-width: 250px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.nav {
-  background-color: tomato;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+.title-conteiner__contact {
+  z-index: 3;
+  position: relative;
 }
 
-.nav__row {
+.header__menu {
+  background-color: #b6aca5;
+}
+
+.header__burger {
+  display: none;
+}
+
+.header__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 35px;
+  position: relative;
+  z-index: 5;
+}
+
+.header__li {
+  list-style: none;
+  color: cornsilk;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 0 0 0 30px;
+}
+
+@media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .header__list {
+    display: block;
+  }
+  .header__list li {
+    margin: 0 0 30px 0;
+  }
+  .title-conteiner__row {
+    display: block;
+    height: 50px;
+  }
+  .title-conteiner__row .title-conteiner__contact {
+    display: none;
+  }
+  .title-conteiner__image img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+  .header__menu {
+    display: block;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: crimson;
+    padding: 100px 0 0 0;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+  }
+  .header__menu.active {
+    top: 0;
+  }
+  .header__burger {
+    z-index: 3;
+    position: relative;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+  }
+  .header__burger span {
+    position: absolute;
+    background-color: cornsilk;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .header__burger:before, .header__burger:after {
+    content: " ";
+    background-color: cornsilk;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .header__burger:before {
+    content: " ";
+    top: 0;
+  }
+  .header__burger:after {
+    content: " ";
+    bottom: 0;
+  }
+}
+
+.header__burger.active span {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.header__burger.active:before {
+  content: " ";
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 9px;
+}
+
+.header__burger.active:after {
+  content: " ";
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+.header__burger.active .main {
+  padding: 30px 0 0 0;
 }
 
 .main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  min-height: 700px;
+  padding: 160px 0 0 0;
+}
+
+.main p {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .footer {
